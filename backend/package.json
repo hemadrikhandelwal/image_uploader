@@ -1,0 +1,16 @@
+{
+  "name": "image_uploader_backend",
+  "version": "1.0.0",
+  "description": "This is backedn file folder for image_uploader_backend",
+  "license": "ISC",
+  "author": "Hemadri Khandelwal",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {}
+}
