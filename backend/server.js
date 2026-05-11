@@ -1,0 +1,34 @@
+import express from 'express';
+import dotenv from 'dotenv';
+import pool from './src/config/db.js';
+import cloudinary from "./src/config/cloudinary.js";
+import imageRouter from './src/routes/imageRoutes.js';
+
+const app = express()
+const port = 3000; // change port from env
+
+app.use(express.json()) //express.json is a middleware which convert data into json 
+app.use("/api/images",imageRouter);
+
+app.get('/', (req, res) => {
+    res.send("3000 port is ")
+})
+
+const startServer = async () => {
+    try {
+        await pool.query("SELECT NOW()");
+        console.log("Database connection setup ");
+
+        const result = await cloudinary.api.ping();
+        console.log("Cloudinary connected", result);
+
+        app.listen(port, () => {
+            console.log(`Server running on port ${port}`);
+        });
+    }
+    catch (err) {
+        console.log("Startup failed", err);
+    }
+}
+
+startServer()
