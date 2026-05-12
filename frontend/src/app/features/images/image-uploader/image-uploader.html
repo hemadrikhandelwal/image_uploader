@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6">
+
+    <h1 class="text-2xl font-semibold mb-6 text-center">
+      Upload Image
+    </h1>
+
+    <form class="space-y-5">
+
+      <!-- Image Title -->
+      <div>
+        <label class="block text-sm font-medium mb-2">
+          Image Name
+        </label>
+
+        <input
+          type="text"
+          placeholder="Enter image name"
+          class="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
+        />
+      </div>
+
+      <!-- Image Description -->
+      <!-- <div>
+        <label class="block text-sm font-medium mb-2">
+          Description
+        </label>
+
+        <textarea
+          rows="4"
+          placeholder="Write something about image..."
+          class="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black resize-none"
+        ></textarea>
+      </div> -->
+
+      <!-- Image Upload -->
+      <div>
+        <label class="block text-sm font-medium mb-2">
+          Upload Image
+        </label>
+
+        <div class="flex flex-col gap-3">
+          <input
+            id="imageFile"
+            type="file"
+            accept="image/*"
+            class="sr-only"
+            (change)="onFileSelected($event)"
+          />
+
+          <label
+            for="imageFile"
+            class="w-1/2 cursor-pointer rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-700 hover:border-black hover:bg-white transition"
+          >
+            {{ selectedFileName || 'Choose an image file' }}
+          </label>
+
+          <p class="text-sm text-gray-500">
+            {{ selectedFileName ? 'Selected file: ' + selectedFileName : 'No file selected' }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-full bg-black text-white py-3 rounded-xl hover:opacity-90 transition"
+        (click)="uploadImage()"
+      >
+        Upload Image
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<header class="flex items-center justify-between px-6 py-4 border-b bg-white">
+  
+  <div class="text-xl font-semibold">
+    ImageUploader
+  </div>
+
+  
+  <div class="flex items-center gap-4">
+
+  
+    <button
+      class="px-4 py-2 rounded-lg bg-black text-white hover:opacity-90 transition"
+      [routerLink]="buttonRoute()"
+    >
+      {{buttonName()}}
+    </button>
+
+   
+    <div
+      class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center font-medium"
+    >
+      H
+    </div>
+
+  </div>
+</header>
