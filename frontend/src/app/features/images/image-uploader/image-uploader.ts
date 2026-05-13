@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 export class ImageUploader {
 
 
-  // TODO: SIgnal form for image upload and 
-  // form to cone ct to ost request 
+  // TODO: Signal form for image upload and 
+  // form to cone ct to post request 
   // check the entire end to end flow of posting the image 
 
   selectedFileName = '';

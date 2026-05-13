@@ -6,4 +6,27 @@ import { Component } from '@angular/core';
   templateUrl: './image-gallery.html',
   styleUrl: './image-gallery.css',
 })
-export class ImageGallery {}
+export class ImageGallery {
+
+  images = [
+  {
+    id: 1,
+    name: 'Mountain View',
+    imageUrl: 'https://via.placeholder.com/150',
+    
+  },
+  {
+    id: 2,
+    name: 'Nature Lake',
+    imageUrl: 'https://via.placeholder.com/150',
+    
+  }
+];
+
+  deleteImage(id:number){
+    
+  }
+
+
+
+}

@@ -1,1 +1,68 @@
-<p> image -gallary works </p>
+<div class="overflow-x-auto bg-white rounded-2xl shadow">
+
+  <table class="w-full text-left border-collapse">
+
+    <!-- Header -->
+    <thead class="bg-gray-100 border-b">
+
+      <tr>
+        <th class="px-6 py-4 text-sm font-semibold">
+          Image
+        </th>
+
+        <th class="px-6 py-4 text-sm font-semibold">
+          Image Name
+        </th>
+
+        <th class="px-6 py-4 text-sm font-semibold text-center">
+          Action
+        </th>
+      </tr>
+
+    </thead>
+
+    <!-- Body -->
+    <tbody>
+
+      @for(image of images; track image.id){
+
+      <tr class="border-b hover:bg-gray-50 transition">
+
+        <!-- Image -->
+        <td class="px-6 py-4">
+
+          <img
+            [src]="image.imageUrl"
+            [alt]="image.name"
+            class="w-20 h-20 object-cover rounded-lg"
+          />
+
+        </td>
+
+        <!-- Name -->
+        <td class="px-6 py-4 font-medium">
+          {{ image.name }}
+        </td>
+
+       
+        <!-- Action -->
+        <td class="px-6 py-4 text-center">
+
+          <button
+            (click)="deleteImage(image.id)"
+            class="bg-red-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition"
+          >
+            Delete
+          </button>
+
+        </td>
+
+      </tr>
+
+      }
+
+    </tbody>
+
+  </table>
+
+</div>
