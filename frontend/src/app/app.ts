@@ -9,5 +9,5 @@ import { Header } from './pages/header/header';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('image-uploader');
+  public readonly title = signal('image-uploader');
 }

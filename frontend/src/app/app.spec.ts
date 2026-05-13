@@ -1,23 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 import { App } from './app';
+import { provideRouter, RouterOutlet } from "@angular/router";
+import { Header } from "./pages/header/header";
 
-describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
-  });
+ describe( 'App',()=>{
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
+  beforeEach(async()=>{
+      await TestBed.configureTestingModule({
+        imports:[App,],
+        providers: [
+          provideRouter([])
+        ]
+
+      }).compileComponents();
+  })
+  it('should create App',()=>{
+    const fixture = TestBed.createComponent(App)
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
+  })
+  it('should have title signal value', () => {
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Image Uploader');
-  });
+  const fixture = TestBed.createComponent(App);
+
+  const app = fixture.componentInstance;
+
+  expect(app.title()).toBe('image-uploader');
+
 });
+})
