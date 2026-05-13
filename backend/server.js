@@ -3,9 +3,12 @@ import dotenv from 'dotenv';
 import pool from './src/config/db.js';
 import cloudinary from "./src/config/cloudinary.js";
 import imageRouter from './src/routes/imageRoutes.js';
+import cors from 'cors';
 
 const app = express()
 const port = 3000; // change port from env
+
+app.use(cors());
 
 app.use(express.json()) //express.json is a middleware which convert data into json 
 app.use("/api/images",imageRouter);

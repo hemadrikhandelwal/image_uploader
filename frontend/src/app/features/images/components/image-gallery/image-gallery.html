@@ -23,8 +23,7 @@
 
     <!-- Body -->
     <tbody>
-
-      @for(image of images; track image.id){
+      @for(image of images(); track image.id){
 
       <tr class="border-b hover:bg-gray-50 transition">
 
@@ -32,8 +31,8 @@
         <td class="px-6 py-4">
 
           <img
-            [src]="image.imageUrl"
-            [alt]="image.name"
+            [src]="image.image_url"
+            [alt]="image.image_name"
             class="w-20 h-20 object-cover rounded-lg"
           />
 
@@ -41,7 +40,7 @@
 
         <!-- Name -->
         <td class="px-6 py-4 font-medium">
-          {{ image.name }}
+          {{ image.image_name }}
         </td>
 
        
@@ -59,6 +58,11 @@
 
       </tr>
 
+      }
+      @empty {
+        <tr>
+          <td colspan="3" class="text-center py-10 text-gray-400">No images found.</td>
+        </tr>
       }
 
     </tbody>
