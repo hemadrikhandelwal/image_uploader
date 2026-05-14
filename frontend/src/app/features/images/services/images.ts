@@ -19,4 +19,8 @@ export class Images {
     return this.http.delete<ImageResponse>(`${this.apiUrl}/api/images/${id}`)
   }
 
+  postImage(data:FormData){
+    return this.http.post<any>(`${this.apiUrl}/api/images/upload`,data)
+  }
+
 }
