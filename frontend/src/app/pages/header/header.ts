@@ -31,19 +31,11 @@ export class Header {
 
 
   ngOnInit(){
-
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.currentRoute.set(this.router.url);
       });
-
-
   }
-
-
-
-
-  
 
 }
