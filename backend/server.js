@@ -1,12 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import 'dotenv/config';
 import pool from './src/config/db.js';
 import cloudinary from "./src/config/cloudinary.js";
 import imageRouter from './src/routes/imageRoutes.js';
 import cors from 'cors';
 
 const app = express()
-const port = 3000; // change port from env
+const port = process.env.PORT;
 
 app.use(cors());
 
